@@ -22,7 +22,7 @@ const signUp = async (name, email, password, address, phoneNumber) => {
     validator.validatePassword(password);
 
     const checkOverlap = await userDao.getUserByEmail(email)
-
+    
     if (checkOverlap) {
         const error = new Error('INVALID_USER')
         error.statusCode = 401;
